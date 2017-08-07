@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Boarding Bikes</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <script src="https://www.gstatic.com/firebasejs/4.1.5/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyDobwpG9Amefb6ghYOgSi2QqAprBI7zpSs",
+      authDomain: "boarding-bikes.firebaseapp.com",
+      databaseURL: "https://boarding-bikes.firebaseio.com",
+      projectId: "boarding-bikes",
+      storageBucket: "boarding-bikes.appspot.com",
+      messagingSenderId: "1011527739171"
+    }
+    firebase.initializeApp(config)
+  </script>  
+</head>
+<body>
+  <nav class="white" role="navigation">
+    <div class="nav-wrapper container">
+      <a id="logo-container" class="brand-logo"><img class="responsive-img" id="logo" src="images/logo.png"/></a>
+      <ul class="right hide-on-med-and-down">
+        <li><a class="modal-trigger" href="#modal1">Log In</a></li>
+      </ul>
+
+      <ul id="nav-mobile" class="side-nav">
+        <li><a href="#">PUPPIES</a></li>
+      </ul>
+      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+
+  <div id="index-banner" class="parallax-container">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <br><br>
+        <h1 class="header center teal-text text-lighten-2">Boarding Bikes</h1>
+        <div class="row center">
+          <h5 class="header col s12 light">Getting to class <i>fast</i> is no more stress at <i>last!</i></h5>
+        </div>
+        <div class="row center">
+          <a href="#modal2" id="download-button" class="btn-large waves-effect waves-light teal lighten-1 modal-trigger">Sign Up</a>
+        </div>
+        <br><br>
+
+      </div>
+    </div>
+    <div class="parallax"><img src="images/background1.jpg" alt="Unsplashed background img 1"></div>
+  </div>
+
+
+  <div class="container">
+    <div class="section">
+
+      <!--   Icon Section   -->
+      <div class="row">
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center brown-text"><i class="material-icons">flash_on</i></h2>
+            <h5 class="center">Mission Statement</h5>
+
+            <p class="light">Boarding Bikes understands that boarding school students are constantly stressed. We aim to eliminate one of their biggest stressors, lateness to class, with our unique bike share service. We provide schools with bikes, bike racks, an app and a website for easy, functional service.</p>
+          </div>
+        </div>
+
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center brown-text"><i class="material-icons">group</i></h2>
+            <h5 class="center">Catering to Students' Needs</h5>
+
+            <p class="light">Boarding Bikes aims to provide the best possible service and ease of access for the students using it around campuses. No matter where you are on campus, a bike is not far away. Students will easily be able to sign a bike out in advance and use it to get to class on time. Our service aims to relieve stress on boarding school students and help them get to class on time.</p>
+          </div>
+        </div>
+
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center brown-text"><i class="material-icons">settings</i></h2>
+            <h5 class="center">Easy Setup</h5>
+
+            <p class="light">By choosing Boarding Bikes for your high school campus you are receiving our customer satisfaction gurantee. We install all of the bike racks and ship all of the bikes to campus for you. Lost bikes are not a problem because each bike is built with its own tracker and broken bikes are replaced when you renew your subscription.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <div class="parallax-container valign-wrapper">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <div class="row center">
+          <h3 class="header col s12 light"><strong>Allowing students to get around campus faster and easier without having to worry about taking care of their bikes.</strong></h3>
+        </div>
+      </div>
+    </div>
+    <div class="parallax"><img src="images/background2.jpg" alt="Unsplashed background img 2"></div>
+  </div>
+
+  <div class="container">
+    <div class="section">
+
+      <div class="row">
+        <div class="col s12 center">
+          <h3><i class="mdi-content-send brown-text"></i></h3>
+          <h4>Get Started</h4>
+          <p class="left-align light">Boarding Bikes aims to ease the stress of busy students with our unique bike share service. By using our service, schools show their dedication to the needs of their students. Our service also eliminates the incessant issue of missing bikes on campus. Our service is affordable for many boarding schools. To order a bike share service for your boarding school email or call us with the available contact information below.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <div class="parallax-container valign-wrapper">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <div class="row center">
+          <h2 class="header col s12 light"><strong>Join the Boarding Bikes community today!</strong></h2>
+        </div>
+      </div>
+    </div>
+    <div class="parallax"><img src="images/background3.jpg" alt="Unsplashed background img 3"></div>
+  </div>
+  
+    <!-- Modal Structure -->
+  <div id="modal1" class="modal modal-fixed-footer">
+    <div class="modal-content">
+      <h4></h4>
+      <p>Email<input type="email" id="loginemail"/></p>
+      <p>Password<input type="password" id="loginpassword"/></p>
+    </div>
+    <div class="modal-footer">
+      <a href="#" onclick={logInWithEmailAndPassword()} class="modal-action modal-close waves-effect waves-green btn-flat ">
+        Log In
+      </a>
+    </div>
+  </div>
+  
+  <!-- Modal Structure -->
+  <div id="modal2" class="modal modal-fixed-footer">
+    <div class="modal-content">
+      <h4></h4>
+      <p>Email<input type="email" id="signupemail"/></p>
+      <p>Password<input type="password" id="signuppassword"/></p>
+      <p>Confirm Password<input type="password" id="confirm-password"/></p>
+    </div>
+    <div class="modal-footer">
+      <a href="#" onclick={signUpWithEmailAndPassword()} class="modal-action modal-close waves-effect waves-green btn-flat ">Sign Up</a>
+    </div>
+  </div>
+
+  <footer class="page-footer teal">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">Contact Us</h5>
+          <p class="grey-text text-lighten-4">
+            Social: @boardingbikes <br>
+            Phone Number : (000) 000-0000 <br>
+            Email: boardingbikes@gmail.com <br>
+            Address: <br>
+            Somewhere Ave <br>
+            New York, NY 10001
+          
+          </p>
+
+
+        </div>
+        <div class="col l3 s12">
+          <a class="white-text modal-trigger" href="#modal1"><font size="5">Log In</font></a>
+          <!--<ul>-->
+          <!--  <li><a class="white-text" href="#!">Link 1</a></li>-->
+          <!--  <li><a class="white-text" href="#!">Link 2</a></li>-->
+          <!--  <li><a class="white-text" href="#!">Link 3</a></li>-->
+          <!--  <li><a class="white-text" href="#!">Link 4</a></li>-->
+          <!--</ul>-->
+        </div>
+        <div class="col l3 s12">
+          <a class="white-text modal-trigger" href="#modal2"><font size="5">Sign Up</font></a>
+          <!--<ul>-->
+          <!--  <li><a class="white-text" href="#!">Link 1</a></li>-->
+          <!--  <li><a class="white-text" href="#!">Link 2</a></li>-->
+          <!--  <li><a class="white-text" href="#!">Link 3</a></li>-->
+          <!--  <li><a class="white-text" href="#!">Link 4</a></li>-->
+          <!--</ul>-->
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+      <!--Made by <a class="brown-text text-lighten-3" href="http://materializecss.com">Materialize</a>-->
+      </div>
+    </div>
+  </footer>
+
+
+  <!--  Scripts-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+  <script src="js/materialize.js"></script>
+  <script src="js/init.js"></script>
+  <script src="js/firebaseAuth.js"></script>
+  <script>
+    $(document).ready(function(){
+        // the "href" attribute of the modal trigger must specify the modal ID that wants to be triggered
+        $('.modal').modal()
+    })
+  </script>
+  </body>
+</html>

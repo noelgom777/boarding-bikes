@@ -1,0 +1,256 @@
+<!DOCTYPE HTML>
+<!--
+	Prologue by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Prologue by HTML5 UP</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="css/main.css" />
+		<link rel="stylesheet" href="css/font-awesome.min.css" />
+        <script src="https://www.gstatic.com/firebasejs/4.1.5/firebase.js"></script>
+        <script src="js/firebaseAuth.js"></script>        
+        <script>
+          // Initialize Firebase
+          var config = {
+            apiKey: "AIzaSyDobwpG9Amefb6ghYOgSi2QqAprBI7zpSs",
+            authDomain: "boarding-bikes.firebaseapp.com",
+            databaseURL: "https://boarding-bikes.firebaseio.com",
+            projectId: "boarding-bikes",
+            storageBucket: "boarding-bikes.appspot.com",
+            messagingSenderId: "1011527739171"
+          }
+          firebase.initializeApp(config)
+        </script>		
+	</head>
+	<body>
+
+		<!-- Header -->
+			<div id="header">
+
+				<div class="top">
+
+					<!-- Logo -->
+						<div id="logo">
+							<span class="image avatar48"><img src="images/avatar.jpg" alt="" /></span>
+							<h1 id="title">Username</h1>
+							<p>School</p>
+						</div>
+
+					<!-- Nav -->
+						<nav id="nav">
+							<!--
+
+								Prologue's nav expects links in one of two formats:
+
+								1. Hash link (scrolls to a different section within the page)
+
+								   <li><a href="#foobar" id="foobar-link" class="icon fa-whatever-icon-you-want skel-layers-ignoreHref"><span class="label">Foobar</span></a></li>
+
+								2. Standard link (sends the user to another page/site)
+
+								   <li><a href="http://foobar.tld" id="foobar-link" class="icon fa-whatever-icon-you-want"><span class="label">Foobar</span></a></li>
+
+							-->
+							<ul>
+								<li><a href="#top" id="top-link" class="skel-layers-ignoreHref"><span class="icon fa-home">Home</span></a></li>
+								<li><a href="#portfolio" id="portfolio-link" class="skel-layers-ignoreHref"><span class="icon fa-th">Current Status</span></a></li>
+								<li><a href="#about" id="about-link" class="skel-layers-ignoreHref"><span class="icon fa-user">Profile</span></a></li>
+								<li><a href="/" id="contact-link" class="skel-layers-ignoreHref" onclick={signOut()}>Sign Out</a></li>
+							</ul>
+						</nav>
+
+				</div>
+
+				<div class="bottom">
+
+					<!-- Social Icons -->
+						<!--<ul class="icons">-->
+						<!--	<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>-->
+						<!--	<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>-->
+						<!--	<li><a href="#" class="icon fa-github"><span class="label">Github</span></a></li>-->
+						<!--	<li><a href="#" class="icon fa-dribbble"><span class="label">Dribbble</span></a></li>-->
+						<!--	<li><a href="#" class="icon fa-envelope"><span class="label">Email</span></a></li>-->
+						<!--</ul>-->
+
+				</div>
+
+			</div>
+
+		<!-- Main -->
+			<div id="main">
+
+				<!-- Intro -->
+					<section id="top" class="one dark cover">
+						<div class="container">
+
+							<header>
+								<h2 class="alt"><strong>Available Bikes</strong></h2>
+								<p>Pick from the following available bikes to check one out!</p>
+							</header>
+
+							<footer>
+								<div class="bikecard">
+								  <img src="images/bikeimage.jpg" alt="Avatar" style="width:100%">
+								  <div class="cardcontainer" >
+								    <h4><b>Bike #1</b></h4> 
+								    <button href="#" onclick="{checkOutBike()}">Check Out Bike</button> 
+								  </div>
+								</div>
+								<div class="bikecard">
+								  <img src="images/bikeimage.jpg" alt="Avatar" style="width:100%">
+								  <div class="cardcontainer">
+								    <h4><b>Bike #2</b></h4> 
+								    <button href="#" onclick="{checkOutBike()}">Check Out Bike</button> 
+								  </div>
+								</div>
+								<div class="bikecard">
+								  <img src="images/bikeimage.jpg" alt="Avatar" style="width:100%">
+								  <div class="cardcontainer">
+								    <h4><b>Bike #3</b></h4> 
+								    <button href="#" onclick="{checkOutBike()}">Check Out Bike</button>
+								  </div>
+								</div>
+							</footer>
+
+						</div>
+					</section>
+
+				<!-- Portfolio -->
+					<section id="portfolio" class="two">
+						<div class="container">
+
+							<header>
+								<h2>Curent Status</h2>
+							</header>
+
+							<p>Checked Out Bike: None <br>
+							Location of Bike: None <br>
+							Bike Passcode: ---- <br>
+							Bike Due By: 8:00 pm
+							</p>
+							<a class="btn" onclick={checkInBike()} href="#" >Check In Bike</a>
+
+							<!--<div class="row">-->
+							<!--	<div class="4u 12u$(mobile)">-->
+							<!--		<article class="item">-->
+							<!--			<a href="#" class="image fit"><img src="images/pic02.jpg" alt="" /></a>-->
+							<!--			<header>-->
+							<!--				<h3>Ipsum Feugiat</h3>-->
+							<!--			</header>-->
+							<!--		</article>-->
+							<!--		<article class="item">-->
+							<!--			<a href="#" class="image fit"><img src="images/pic03.jpg" alt="" /></a>-->
+							<!--			<header>-->
+							<!--				<h3>Rhoncus Semper</h3>-->
+							<!--			</header>-->
+							<!--		</article>-->
+							<!--	</div>-->
+							<!--	<div class="4u 12u$(mobile)">-->
+							<!--		<article class="item">-->
+							<!--			<a href="#" class="image fit"><img src="images/pic04.jpg" alt="" /></a>-->
+							<!--			<header>-->
+							<!--				<h3>Magna Nullam</h3>-->
+							<!--			</header>-->
+							<!--		</article>-->
+							<!--		<article class="item">-->
+							<!--			<a href="#" class="image fit"><img src="images/pic05.jpg" alt="" /></a>-->
+							<!--			<header>-->
+							<!--				<h3>Natoque Vitae</h3>-->
+							<!--			</header>-->
+							<!--		</article>-->
+							<!--	</div>-->
+							<!--	<div class="4u$ 12u$(mobile)">-->
+							<!--		<article class="item">-->
+							<!--			<a href="#" class="image fit"><img src="images/pic06.jpg" alt="" /></a>-->
+							<!--			<header>-->
+							<!--				<h3>Dolor Penatibus</h3>-->
+							<!--			</header>-->
+							<!--		</article>-->
+							<!--		<article class="item">-->
+							<!--			<a href="#" class="image fit"><img src="images/pic07.jpg" alt="" /></a>-->
+							<!--			<header>-->
+							<!--				<h3>Orci Convallis</h3>-->
+							<!--			</header>-->
+							<!--		</article>-->
+							<!--	</div>-->
+							<!--</div>-->
+
+						</div>
+					</section>
+
+				<!-- About Me -->
+					<section id="about" class="three">
+						<div class="container">
+
+							<header>
+								<h2>Profile</h2>
+							</header>
+
+							<a href="#" class="image featured"><img src="images/pic08.jpg" alt="" /></a>
+
+							<p>Username: <br>
+							School: <br>
+							Graduating Class: <br>
+							Checked Out Bikes: 0
+							</p>
+
+						</div>
+					</section>
+
+				<!-- Contact -->
+					<section id="contact" class="four">
+						<div class="container">
+
+							<!--<header>-->
+							<!--	<h2>Contact</h2>-->
+							<!--</header>-->
+
+							<!--<p>Elementum sem parturient nulla quam placerat viverra-->
+							<!--mauris non cum elit tempus ullamcorper dolor. Libero rutrum ut lacinia-->
+							<!--donec curae mus. Eleifend id porttitor ac ultricies lobortis sem nunc-->
+							<!--orci ridiculus faucibus a consectetur. Porttitor curae mauris urna mi dolor.</p>-->
+
+							<!--<form method="post" action="#">-->
+							<!--	<div class="row">-->
+							<!--		<div class="6u 12u$(mobile)"><input type="text" name="name" placeholder="Name" /></div>-->
+							<!--		<div class="6u$ 12u$(mobile)"><input type="text" name="email" placeholder="Email" /></div>-->
+							<!--		<div class="12u$">-->
+							<!--			<textarea name="message" placeholder="Message"></textarea>-->
+							<!--		</div>-->
+							<!--		<div class="12u$">-->
+							<!--			<input type="submit" value="Send Message" />-->
+							<!--		</div>-->
+							<!--	</div>-->
+							<!--</form>-->
+
+						</div>
+					</section>
+
+			</div>
+
+		<!-- Footer -->
+			<div id="footer">
+
+				<!-- Copyright -->
+					<ul class="copyright">
+						<li>&copy; Untitled. All rights reserved.</li>
+					</ul>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="js/jquery.min.js"></script>
+			<script src="js/jquery.scrolly.min.js"></script>
+			<script src="js/jquery.scrollzer.min.js"></script>
+			<script src="js/skel.min.js"></script>
+			<script src="js/util.js"></script>
+			<!--[if lte Icript src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="js/main.js"></script>
+  			<script src="js/firebaseAuth.js"></script>
+
+	</body>
+</html>
